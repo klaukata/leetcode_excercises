@@ -16,3 +16,7 @@ def createDataframe(student_data: List[List[int]]) -> pd.DataFrame:
 def getDataframeSize(players: pd.DataFrame) -> List[int]:
     # return [len(players), len(players.columns)]
     return list(players.shape)
+
+#2879 = https://leetcode.com/problems/display-the-first-three-rows/description/?envType=study-plan-v2&envId=introduction-to-pandas&lang=pythondata
+def selectFirstRows(employees: pd.DataFrame) -> pd.DataFrame:
+    return employees.head(3)
