@@ -3,10 +3,11 @@
 import pandas as pd
 
 def createDataframe(student_data: List[List[int]]) -> pd.DataFrame:
-    student_id = []
-    age = []
-    for x in student_data:
-        student_id.append(x[0])
-        age.append(x[1])
-    d = {'student_id': student_id, 'age': age}
-    return pd.DataFrame(data=d)
+    # student_id = []
+    # age = []
+    # for x in student_data:
+    #     student_id.append(x[0])
+    #     age.append(x[1])
+    # d = {'student_id': student_id, 'age': age}
+    # return pd.DataFrame(data=d)
+    return pd.DataFrame(student_data, columns=['student_id', 'age'])
