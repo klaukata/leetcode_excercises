@@ -21,16 +21,20 @@ import pandas as pd
 # def selectFirstRows(employees: pd.DataFrame) -> pd.DataFrame:
 #     return employees.head(3)
 
+#2880 - https://leetcode.com/problems/select-data/?envType=study-plan-v2&envId=introduction-to-pandas&lang=pythondata
+# def selectData(students: pd.DataFrame) -> pd.DataFrame:
+#     return students.query('calories == 420').loc[:, ['duration', 'age']]
+
+
+#2881 - https://leetcode.com/problems/create-a-new-column/description/?envType=study-plan-v2&envId=introduction-to-pandas&lang=pythondata
+def createBonusColumn(employees: pd.DataFrame) -> pd.DataFrame:
+    return employees.assign(bonus=employees.duration.map(lambda p: p * 2))
+
 
 data = {
     "calories": [420, 380, 390],
     "duration": [50, 40, 45],
-    "age": [20,21,22]
+    "age": [20, 21, 22]
 }
 df = pd.DataFrame(data)
-
-#2880 - https://leetcode.com/problems/select-data/?envType=study-plan-v2&envId=introduction-to-pandas&lang=pythondata
-def selectData(students: pd.DataFrame) -> pd.DataFrame:
-    return students.query('calories == 420').loc[:, ['duration', 'age']]
-
-print(selectData(df))
+print(createBonusColumn(df))
