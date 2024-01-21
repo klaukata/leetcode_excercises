@@ -31,14 +31,18 @@ import pandas as pd
 #     return employees.assign(bonus=employees.duration.map(lambda p: p * 2))
 
 # 2882 - https://leetcode.com/problems/drop-duplicate-rows/description/?envType=study-plan-v2&envId=introduction-to-pandas&lang=pythondata
-def dropDuplicateEmails(customers: pd.DataFrame) -> pd.DataFrame:
-    return customers.drop_duplicates(subset='age')
+# def dropDuplicateEmails(customers: pd.DataFrame) -> pd.DataFrame:
+#     return customers.drop_duplicates(subset='age')
+
+# 2883 - https://leetcode.com/problems/drop-missing-data/description/?envType=study-plan-v2&envId=introduction-to-pandas&lang=pythondata
+def dropMissingData(students: pd.DataFrame) -> pd.DataFrame:
+    return students.dropna(subset='age')
 
 
 data = {
     "calories": [420, 380, 390],
     "duration": [50, 40, 45],
-    "age": [20, 21, 20]
+    "age": [20, None, 20]
 }
 df = pd.DataFrame(data)
-print(dropDuplicateEmails(df))
+print(dropMissingData(df))
