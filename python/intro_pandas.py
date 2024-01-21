@@ -35,14 +35,19 @@ import pandas as pd
 #     return customers.drop_duplicates(subset='age')
 
 # 2883 - https://leetcode.com/problems/drop-missing-data/description/?envType=study-plan-v2&envId=introduction-to-pandas&lang=pythondata
-def dropMissingData(students: pd.DataFrame) -> pd.DataFrame:
-    return students.dropna(subset='age')
+# def dropMissingData(students: pd.DataFrame) -> pd.DataFrame:
+#     return students.dropna(subset='age')
+
+# 2884 - https://leetcode.com/problems/modify-columns/description/?envType=study-plan-v2&envId=introduction-to-pandas&lang=pythondata
+def modifySalaryColumn(employees: pd.DataFrame) -> pd.DataFrame:
+    employees['age'] = employees['age'].apply(lambda p: p * 2)
+    return employees
 
 
 data = {
     "calories": [420, 380, 390],
     "duration": [50, 40, 45],
-    "age": [20, None, 20]
+    "age": [20, 21, 22]
 }
 df = pd.DataFrame(data)
-print(dropMissingData(df))
+print(modifySalaryColumn(df))
